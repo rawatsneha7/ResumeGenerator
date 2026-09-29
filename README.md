@@ -33,24 +33,6 @@ resume-generator/
 
 You can also just double-click `index.html` to open it in a browser.
 
-## Publish on GitHub Pages
-
-1. Create a new repository on GitHub (for example `resume-generator`).
-2. In the project folder, run:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: resume generator"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/resume-generator.git
-   git push -u origin main
-   ```
-
-3. On GitHub, go to **Settings > Pages**.
-4. Under **Build and deployment**, set **Source** to **Deploy from a branch**, choose branch `main` and folder `/ (root)`, then save.
-5. After a minute, your site is live at `https://<your-username>.github.io/resume-generator/`.
-
 ## Customise
 
 - Replace the sample data in the `SAMPLE` object at the top of `script.js`.
