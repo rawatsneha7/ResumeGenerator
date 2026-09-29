@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resume Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="bar">
+    <h1>Resume Generator</h1>
+    <label class="ctl">Template
+      <select id="tpl">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+        <option value="compact">Compact</option>
+      </select>
+    </label>
+    <label class="ctl">Accent <input type="color" id="accent" value="#2b5f8e"></label>
+    <span class="grow"></span>
+    <button class="btn" id="dataBtn">Import / export</button>
+    <button class="btn danger" id="resetBtn">Reset</button>
+    <button class="btn primary" id="printBtn">Save as PDF</button>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="btn" role="tab" data-view="edit" aria-selected="true">Edit</button>
+    <button class="btn" role="tab" data-view="preview" aria-selected="false">Preview</button>
+  </div>
+  <div class="main" id="main" data-view="edit">
+    <div class="editor" id="editor"></div>
+    <div class="preview" id="preview">
+      <div class="pagecount" id="pagecount"></div>
+      <div class="stage" id="stage"><div class="scaler" id="scaler"><div class="paper" id="paper"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <strong>Import / export resume data</strong>
+  <p class="hint" style="margin:6px 0 10px">Copy this JSON to back up your resume, or paste saved JSON and load it.</p>
+  <textarea id="json" spellcheck="false"></textarea>
+  <div class="foot">
+    <span class="msg" id="dmsg"></span>
+    <button class="btn" id="copyBtn">Copy</button>
+    <button class="btn primary" id="loadBtn">Load JSON</button>
+    <button class="btn" id="closeBtn">Close</button>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
